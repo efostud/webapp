@@ -4,11 +4,25 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 100%;
+}
+
+body {
+    line-height: 1.4;
+}
+
 .main {
+    font-size: 1.2rem;
     width: 96%;
     max-width: 64rem;
     margin: 2rem auto;
     padding: 2rem;
     background-color: cornflowerblue;
     color: salmon;
+    font-family: sans-serif;
+}
+
+p {
+    margin-bottom: 1.68rem;
 }
