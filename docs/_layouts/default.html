@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ site.title }}</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/dark.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dbwebb-se/utils-2025@v1.0.10/css/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <img src="https://cdn.jsdelivr.net/gh/dbwebb-se/utils-2025@main/img/leaf_256x256.png" alt="dbwebb-logo" class="header-logo" />
+            <h1 class="dbwebb-header">
+                <a href="https://dbwebb.se">dbwebb.se</a>
+            </h1>
+        </div>
+        <nav class="nav">
+            <p>Här bör finnas en meny</p>
+        </nav>
+    </header>
+    <main class="main" id="main">
+        <article class="article">
+            {{ content }}
+        </article>
+        <aside class="sidebar">
+            <h3>Innehåll</h3>
+            <p>Här ska en meny skapas</p>
+            <h3>Författare:</h3>
+            <div class="author-images">
+                {% for author in page.author %}
+                    <img src="https://cdn.jsdelivr.net/gh/dbwebb-se/utils-2025@main/img/{{ author }}.jpg" alt="bild på {{ author }}" />
+                    <p>{{ author }}</p>
+                {% endfor %}
+            </div>
+        </aside>
+    </main>
+    <footer class="footer">
+        <div class="inner-footer">
+            <a href="https://dbwebb.se" target="_blank"><img src="https://cdn.jsdelivr.net/gh/dbwebb-se/utils-2025@main/img/leaf_256x256.png" alt="dbwebb-logo" /></a>
+            <a href="https://bth.se" target="_blank"><img src="https://cdn.jsdelivr.net/gh/dbwebb-se/utils-2025@main/img/bth_logotyp_vit.png" alt="bth-logo" /></a>
+        </div>
+        <p>&copy; dbwebb.se</p>
+    </footer>
+
+    <script type="module">
+        import { parseYoutube, parseInfo, parseWarning } from "https://cdn.jsdelivr.net/gh/dbwebb-se/utils-2025@v1.0.10/js/parse.js";
+
+        const article = document.getElementById("main");
+
+        parseYoutube(article);
+        parseInfo(article);
+        parseWarning(article);
+
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
